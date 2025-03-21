@@ -38,14 +38,14 @@ CUDA_VISIBLE_DEVICES=0 python scripts/Inference.py --LQpath TestSamples/1/lq1.pn
 ## Train 
 ```
 # First train base model
-# download sdv15 pretrained model (runwayml/v1-5-pruned.ckpt) from huggingface, put into the ckpt path as: ckpt/v1-5-pruned.ckpt
+# download sdv15 pretrained model (runwayml/v1-5-pruned.ckpt) from huggingface([RestorerID-huggingface](https://huggingface.co/YingJiacheng/RestorerID/)), put into the ckpt path as: ckpt/v1-5-pruned.ckpt
 # prepare your datasets
 
 CUDA_VISIBLE_DEVICES=0,1 python train_basemodel.py --train --base configs/v15/v15-BaseModel.yaml  --name v15_basemodel --scale_lr False
 
 # Then train RestorerID
 # rename your trained base model and put to ckpt path as: ckpt/basemodel.ckpt
-# download ID model ip-adapter-faceid-plus_sd15.bin from [IPAdapter-huggingface](https://huggingface.co/h94/IP-Adapter-FaceID/tree/main), put it into the ckpt path as: ckpt/ip-adapter-faceid-plus_sd15.bin
+# download ID model ip-adapter-faceid-plus_sd15.bin from [IPAdapter-huggingface](https://huggingface.co/h94/IP-Adapter-FaceID/tree/main)(or [RestorerID-huggingface](https://huggingface.co/YingJiacheng/RestorerID/)), put it into the ckpt path as: ckpt/ip-adapter-faceid-plus_sd15.bin
 # prepare your datasets
 # combine basemodel with ID model
 
